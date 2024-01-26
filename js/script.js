@@ -30,17 +30,35 @@ const pricePerKm = 0.21;
 let price = travelKm * pricePerKm;
 console.log(price);
 
+document.getElementById('traveller-name').innerHTML = traveller;
+document.getElementById('travel-lenght').innerHTML = travelKm + " Km";
+document.getElementById('partial-price').innerHTML = price.toFixed(2) + " €";
+
+const discount20 = 20;
+const discount40 = 40;
+
 // calcolo sconto 20% per i minorenni
 if (age < 18) {
-    price = price - (price * 20 / 100);
+    price = price - (price * discount20 / 100);
+    document.getElementById('rate').innerHTML = "Under 18 - Sconto 20%";
 }
 
 // calcolo sconto 40% per gli over 65
-if (age > 65) {
-    price = price - (price * 40 / 100);
+else if (age > 65) {
+
+    price = price - (price * discount40 / 100);
+    document.getElementById('rate').innerHTML = "Over 65 - Sconto 40%";
+}
+
+else {
+    document.getElementById('rate').innerHTML = "Standard";
 }
 
 console.log(price);
+
+document.getElementById('total-price').innerHTML = price.toFixed(2) + " €";
+
+
 
 
 
