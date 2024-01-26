@@ -18,12 +18,26 @@ const traveller = prompt("Inserisci il nome completo del passeggero");
 console.log(traveller);
 
 // età passeggero
-const age = Number(prompt("Inserisci l'età del passeggero"));
+let age;
+
+// controllo età
+age = Number(prompt("Inserisci l'età del passeggero"));
 console.log(age);
 
+while (age < 5 || age > 125 || !Number.isInteger(age)) {
+    alert("Inserire un valore tra 5 e 125");
+    age = Number(prompt("Inserisci l'età del passeggero"));
+}
+
 // lunghezza viaggio
-const travelKm = Number(prompt("Inserisci il numero di chilometri da percorrere"));
-console.log(travelKm);
+let travelKm;
+
+// controllo lunghezza viaggio
+travelKm = Number(prompt("Inserisci il numero di chilometri da percorrere"));
+while (travelKm <= 0 || travelKm >= 180 || !Number.isInteger(travelKm)) {
+    alert("Inserire un valore valido");
+    travelKm = Number(prompt("Inserisci il numero di chilometri da percorrere"));
+}
 
 // calcolo prezzo del biglietto sulla base dei chilometri
 const pricePerKm = 0.21;
