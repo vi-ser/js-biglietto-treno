@@ -18,11 +18,11 @@ const traveller = prompt("Inserisci il nome completo del passeggero");
 console.log(traveller);
 
 // età passeggero
-const age = prompt("Inserisci l'età del passeggero");
+const age = Number(prompt("Inserisci l'età del passeggero"));
 console.log(age);
 
 // lunghezza viaggio
-const travelKm = prompt("Inserisci il numero di chilometri che vuoi percorrere");
+const travelKm = Number(prompt("Inserisci il numero di chilometri da percorrere"));
 console.log(travelKm);
 
 // calcolo prezzo del biglietto sulla base dei chilometri
